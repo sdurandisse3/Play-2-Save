@@ -6,6 +6,14 @@ class SignUp extends React.Component{
         password: '',
         error: ''
       }
+      render() {
+      
+        
     
+        return (
+            <h1>Sign Up</h1>
+
+        );
+      }
 }
 export default SignUp;
