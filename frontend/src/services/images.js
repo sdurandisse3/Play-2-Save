@@ -18,5 +18,6 @@ ImageService.getImages = () => {
   
     oldImages.unshift(newImage);
   
+    localStorage.setItem('images', JSON.stringify(oldImages));
   }
 export default ImageService;
