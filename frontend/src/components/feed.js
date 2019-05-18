@@ -7,6 +7,9 @@ class Feed extends React.Component{
     constructor(props) {
         super(props);
 
+        ImageService.init();
+        const imagesArray = ImageService.getImages();
+
         this.state = {
             images: imagesArray
           }
