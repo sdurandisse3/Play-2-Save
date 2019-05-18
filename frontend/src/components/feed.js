@@ -8,6 +8,10 @@ class Feed extends React.Component{
             images: imagesArray
           }
     }
+    render(){
+        const { images } = this.state; 
+
+    }
 
 }
 export default Feed;
