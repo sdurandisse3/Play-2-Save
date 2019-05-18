@@ -1,6 +1,7 @@
 import React from 'react';
 import {HashRouter, Route, Switch } from 'react-router-dom';
 
+
 import Navbar from './components/navbar';
 import Home from './containers/home';
 import Snappers from './containers/snappers';
@@ -22,7 +23,6 @@ class App extends React.Component {
         </Switch>
       </HashRouter>
     );
-  };
 }
   
 
