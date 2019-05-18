@@ -48,7 +48,7 @@ class SignUp extends React.Component{
             <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
           </form>
         </>;
-        
+
         return (
           <AuthContext.Consumer>
           {
