@@ -53,6 +53,8 @@ class SignUp extends React.Component{
             (user) => {
               if (user) {
                 return <Redirect to='/' />
+              } else {
+                return displayForm;
               } 
             }
           }
