@@ -10,6 +10,7 @@ class SignUp extends React.Component{
         password: '',
         error: ''
       }
+
       handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
       }
@@ -47,6 +48,7 @@ class SignUp extends React.Component{
             <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
           </form>
         </>;
+        
         return (
           <AuthContext.Consumer>
           {
@@ -61,5 +63,5 @@ class SignUp extends React.Component{
         </AuthContext.Consumer>
         );
       }
-}
+    }
 export default SignUp;
