@@ -1,6 +1,9 @@
-import Recat from 'react'
+import React from 'react'
 
 class Feed extends React.Component{
+    constructor(props) {
+        super(props);
+    }
 
 }
 export default Feed;
