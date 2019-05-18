@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from '../components/image';
+
 
 class Feed extends React.Component{
     constructor(props) {

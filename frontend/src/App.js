@@ -1,12 +1,12 @@
 import React from 'react';
-// import Feed from './components/feed';
+import Feed from './components/feed';
 
 
 function App() {
   return (
     <div className="App">
       Hello World!
-      {/* <Feed/> */}
+      <Feed/>
     </div>
   );
 }
