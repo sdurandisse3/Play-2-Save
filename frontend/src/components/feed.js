@@ -10,7 +10,9 @@ class Feed extends React.Component{
     }
     render(){
         const { images } = this.state; 
+        return(
 
+        );
     }
 
 }
