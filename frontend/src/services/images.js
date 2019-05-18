@@ -5,4 +5,9 @@ ImageService.init = () => {
       localStorage.setItem('images', JSON.stringify([]));
     }
   }
+
+ImageService.getImages = () => {
+    const imageArrayString = localStorage.getItem('images');
+  }
+
 export default ImageService;
