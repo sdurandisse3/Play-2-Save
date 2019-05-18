@@ -20,6 +20,7 @@ class SignUp extends React.Component{
               <label htmlFor="exampleInputPassword1">Password</label>
               <input type="password" className="form-control" placeholder="Password"  />
             </div>
+            <button type="submit" className="btn btn-primary" >Sign Up</button>
           </form>
         );
       }
