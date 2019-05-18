@@ -48,7 +48,13 @@ class SignUp extends React.Component{
           </form>
         </>;
         return (
-  
+          <AuthContext.Consumer>
+          {
+            (user) => {
+
+            }
+          }
+        </AuthContext.Consumer>
         );
       }
 }
