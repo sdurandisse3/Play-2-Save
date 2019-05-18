@@ -51,7 +51,9 @@ class SignUp extends React.Component{
           <AuthContext.Consumer>
           {
             (user) => {
-
+              if (user) {
+                return <Redirect to='/' />
+              } 
             }
           }
         </AuthContext.Consumer>
