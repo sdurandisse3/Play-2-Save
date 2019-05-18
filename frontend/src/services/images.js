@@ -12,4 +12,8 @@ ImageService.getImages = () => {
     return imageArray;
   }
 
+  ImageService.saveImage = (url, timestamp) => {
+    const newImage = { url, timestamp };
+  
+  }
 export default ImageService;
