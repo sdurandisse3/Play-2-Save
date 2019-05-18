@@ -1,0 +1,13 @@
+.navbar-light .navbar-nav .nav-link {
+  color: #b3d7ff;
+  line-height: 5;
+}
+
+.fas,
+.fa-camera,
+.fa-5x {
+  color: blueviolet;
+  padding: 15%;
+  border: 1px solid blueviolet;
+  border-radius: 50%;
+}
