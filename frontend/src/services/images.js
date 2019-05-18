@@ -14,6 +14,8 @@ ImageService.getImages = () => {
 
   ImageService.saveImage = (url, timestamp) => {
     const newImage = { url, timestamp };
+    const oldImages = ImageService.getImages();
+  
   
   }
 export default ImageService;
