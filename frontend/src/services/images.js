@@ -16,6 +16,7 @@ ImageService.getImages = () => {
     const newImage = { url, timestamp };
     const oldImages = ImageService.getImages();
   
+    oldImages.unshift(newImage);
   
   }
 export default ImageService;
