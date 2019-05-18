@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from '../components/image';
+import ImageService from '../services/images';
 
 
 class Feed extends React.Component{
