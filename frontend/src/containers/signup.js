@@ -1,5 +1,7 @@
 import React from 'react';
 import firebase from '../firebase';
+import AuthContext from '../contexts/auth';
+import { Redirect } from 'react-router-dom';
 
 
 class SignUp extends React.Component{
@@ -11,6 +13,7 @@ class SignUp extends React.Component{
       handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
       }
+      
       handleSubmit = (e) => {
         e.preventDefault();
     
@@ -22,13 +25,11 @@ class SignUp extends React.Component{
           .catch(err => {
             const { message } = err;
             this.setState({ error: message });
-          })
+          }) 
       }
 
       render() {
-      
         
-    
         return (
             <form>
             <div className="form-group">
