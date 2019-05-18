@@ -8,6 +8,7 @@ ImageService.init = () => {
 
 ImageService.getImages = () => {
     const imageArrayString = localStorage.getItem('images');
+    const imageArray = JSON.parse(imageArrayString);
   }
 
 export default ImageService;
