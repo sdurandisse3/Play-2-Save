@@ -19,6 +19,7 @@ class Upload extends React.Component{
   saveImage = (url) => {
     const date = Date();
 
+    ImageService.saveImage(url, date);
   }
 
 
