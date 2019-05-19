@@ -9,8 +9,11 @@ class Login extends React.Component{
       }
 
       render(){
+        const { email, password, error } = this.state;
+        const displayError = error === '' ? '' : <div className="alert alert-danger" role="alert">{error}</div>
+
           return(
-              
+
           )
       }
 }
