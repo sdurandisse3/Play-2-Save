@@ -32,7 +32,11 @@ class Login extends React.Component{
 
           return(
             <AuthContext.Consumer>
-
+            {
+              (user) => {
+            
+              }
+            }
           </AuthContext.Consumer>
           )
       }
