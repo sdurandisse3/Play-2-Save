@@ -30,6 +30,7 @@ class Upload extends React.Component{
 
     try {
       const snapshot = await newImage.put(firstFile);
+      const url = await snapshot.ref.getDownloadURL();
       
     }
 
