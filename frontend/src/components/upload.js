@@ -33,7 +33,9 @@ class Upload extends React.Component{
       const url = await snapshot.ref.getDownloadURL();
       this.saveImage(url);
     }
-
+    catch(err) {
+      console.log(err);
+    }
     
   }
 
