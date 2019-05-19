@@ -86,7 +86,7 @@ class Camera extends Component {
 
                 <video
                     ref={this.videoRef}
-                    autoPlay="true"
+                    autoPlay={true}
                 />
                 <img
                     alt="imgCamera"
