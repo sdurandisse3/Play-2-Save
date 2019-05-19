@@ -19,6 +19,7 @@ function App() {
   <Route path='/upload' exact component={Upload}/>
   <Route path='/login' exact component={Login}/>
   <Route path='/feed' exact component={Feed}/>
+  <Route path='/camera' exact component={Camera}/>
 
   </>
 </HashRouter>

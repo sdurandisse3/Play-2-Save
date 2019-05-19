@@ -14,6 +14,9 @@ return(
         <Link className="nav-link" to="/signup">Sign Up</Link>
       </li>    
       <li className="nav-item">
+        <Link className="nav-link" to="/camera">Camera</Link>
+      </li> 
+      <li className="nav-item">
         <Link className="nav-link" to="/feed">Feed</Link>
       </li>
       <li className="nav-item">

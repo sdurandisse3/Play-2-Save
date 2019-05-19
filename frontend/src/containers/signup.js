@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from '../firebase';
 import AuthContext from '../contexts/auth';
 import { Redirect } from 'react-router-dom';
+import Login from './login';
 
 
 class SignUp extends React.Component{
@@ -34,10 +35,16 @@ class SignUp extends React.Component{
         console.log('state',this.state, 'email',email, 'password',password)
         const displayError = error === '' ? '' : <div className="alert alert-danger" role="alert">{error}</div>
         const displayForm = <>
-          <h1>Sign Up</h1>
+          <h1>Become a Couponer</h1>
           {displayError}
+          {/* <div className='col-4' >
+           <Login/> 
+          </div> */}
+          
           <form >
-<div className='container' >
+            
+<div className='container col-4' >
+
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email</label>
               <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="email" value={email} onChange={this.handleChange} />
