@@ -7,7 +7,7 @@ const Button = (props) =>{
     return <button type="button" className="btn btn-primary" onClick={e=>{
         if(value === 'My Location') handleOnClick()
         props.history.push(goTo)}
-    }></button>
+    }>{value}</button>
 }
 
 export default withRouter(Button)
