@@ -25,6 +25,7 @@ class Upload extends React.Component{
   handleFileInput = async (e) => {
     const firstFile = e.target.files[0];
 
+    const root = firebase.storage().ref()
 
 
 
