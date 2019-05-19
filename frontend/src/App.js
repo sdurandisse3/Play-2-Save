@@ -1,12 +1,12 @@
 import React from 'react';
-import Feed from './components/feed';
+import SignUp from './containers/signup';
 
 
 function App() {
   return (
     <div className="App">
       Hello World!
-      <Feed/>
+      <SignUp/>
     </div>
   );
 }
