@@ -13,3 +13,8 @@ import ImageService from '../services/images';
     appId: "1:460830477176:web:4af433240e6eaaf4"
 };
 firebase.initializeApp(config);
+
+class Upload extends React.Component{
+
+}
+export default Upload;
