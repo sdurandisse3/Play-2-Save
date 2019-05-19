@@ -14,7 +14,7 @@ class Login extends React.Component{
       handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
       }
-
+      
       handleSubmit = (e) => {
         e.preventDefault();
     
@@ -23,7 +23,10 @@ class Login extends React.Component{
           .then((response) => {
             console.log('Returns: ', response);
           })
-
+          .catch(err => {
+            const { message } = err;
+            this.setState({ error: message });
+          })
       }
 
       render(){
