@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from './image'
+import Image from '../components/image'
 import ImageService from '../services/images';
 
 
@@ -14,9 +14,9 @@ class Feed extends React.Component{
             images: imagesArray
           }
     }
+
     render(){
         const { images } = this.state; 
-        console.log('state',this.state)
         return(
         <div className='container'>
         {
@@ -27,6 +27,5 @@ class Feed extends React.Component{
       </div>
         );
     }
-
 }
 export default Feed;

@@ -21,4 +21,5 @@ ImageService.saveImage = (url, timestamp) => {
   localStorage.setItem('images', JSON.stringify(oldImages));
   return oldImages;
 }
+
 export default ImageService;
