@@ -11,6 +11,8 @@ function App() {
 <HashRouter>
   <>
   <Header/>
+  <Route path='/signup' exact component={SignUp}/>
+
   </>
 </HashRouter>
 
