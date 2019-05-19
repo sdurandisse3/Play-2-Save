@@ -29,6 +29,7 @@ class Upload extends React.Component{
     const newImage = root.child(firstFile.name);
 
     try {
+      const snapshot = await newImage.put(firstFile);
       
     }
 
