@@ -36,7 +36,9 @@ class Login extends React.Component{
               (user) => {
                 if (user) {
                   return <Redirect to='/' />
-                } 
+                } else {
+                  return displayForm;
+                }
               }
             }
           </AuthContext.Consumer>
