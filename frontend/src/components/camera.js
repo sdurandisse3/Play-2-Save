@@ -28,15 +28,6 @@ class Camera extends Component {
             });
     }
 
-    startCameraMaxResolution(idealFacingMode) {
-        this.cameraPhoto.startCameraMaxResolution(idealFacingMode)
-            .then(() => {
-                console.log('camera is started !');
-            })
-            .catch((error) => {
-                console.error('Camera not started!', error);
-            });
-    }
 
     takePhoto() {
         const config = {
@@ -57,41 +48,52 @@ class Camera extends Component {
             });
     }
 
+    showPic = () => {
+        if (this.state.dataUri) {
+            return <img alt="imgCamera" src={this.state.dataUri} />
+        }
+    }
     render() {
+        console.log(this.state.dataUri)
         return (
-            <div>
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.ENVIRONMENT;
-                    let idealResolution = { width: 640, height: 480 };
-                    this.startCamera(facingMode, idealResolution);
-                }}> Start environment facingMode resolution ideal 640 by 480 </button>
+            <div className="container camBorder">
+                <div className="row camBorder">
 
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.USER;
-                    this.startCamera(facingMode, {});
-                }}> Start user facingMode resolution default </button>
+                    <div className="col camBorder">
+                        <button className="btn btn-primary camBorder" onClick={() => {
+                            let facingMode = FACING_MODES.ENVIRONMENT;
+                            let idealResolution = { width: 640, height: 480 };
+                            this.startCamera(facingMode, idealResolution);
+                        }}>Front Camera</button>
+                    </div>
 
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.USER;
-                    this.startCameraMaxResolution(facingMode);
-                }}> Start user facingMode resolution maximum </button>
+                    <div className="col camBorder">
+                        <button className="btn btn-success camBorder" onClick={() => {
+                            this.takePhoto();
+                        }}> Take photo </button>
+                    </div>
 
-                <button onClick={() => {
-                    this.takePhoto();
-                }}> Take photo </button>
+                    <div className="col camBorder">
+                        <button className="btn btn-danger camBorder" onClick={() => {
+                            this.stopCamera();
+                        }}> Stop </button>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <video
+                                ref={this.videoRef}
+                                autoPlay={true}
+                            />
+                        </div>
+                    </div>
 
-                <button onClick={() => {
-                    this.stopCamera();
-                }}> Stop </button>
+                    <div className="row camBorder">
 
-                <video
-                    ref={this.videoRef}
-                    autoPlay={true}
-                />
-                <img
-                    alt="imgCamera"
-                    src={this.state.dataUri}
-                />
+                        <div className="col camBorder">
+                            {this.showPic()}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     };
