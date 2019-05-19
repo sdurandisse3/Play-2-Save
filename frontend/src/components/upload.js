@@ -15,6 +15,13 @@ import ImageService from '../services/images';
 firebase.initializeApp(config);
 
 class Upload extends React.Component{
+
+  saveImage = (url) => {
+
+  }
+
+
+
 render(){
   return(
     <div className='container'>
