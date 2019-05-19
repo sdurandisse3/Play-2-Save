@@ -1,12 +1,14 @@
 import React from 'react';
 import SignUp from './containers/signup';
+import Header from './components/header';
 
 
 function App() {
   return (
     <div className="App">
-      Hello World!
-      <SignUp/>
+      <Header/>
+
+    
     </div>
   );
 }

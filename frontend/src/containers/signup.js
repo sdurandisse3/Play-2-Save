@@ -36,7 +36,8 @@ class SignUp extends React.Component{
         const displayForm = <>
           <h1>Sign Up</h1>
           {displayError}
-          <form>
+          <form >
+<div className='container' >
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email</label>
               <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="email" value={email} onChange={this.handleChange} />
@@ -46,6 +47,9 @@ class SignUp extends React.Component{
               <input type="password" className="form-control" placeholder="Password" value={password} name="password" onChange={this.handleChange} />
             </div>
             <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
+           
+</div>
+
           </form>
         </>;
 
