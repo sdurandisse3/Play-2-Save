@@ -5,7 +5,7 @@ import Header from './components/header';
 import Upload from './components/upload';
 import { HashRouter, Route} from 'react-router-dom';
 import Login from './containers/login';
-
+import Camera from './components/camera'
 
 
 
