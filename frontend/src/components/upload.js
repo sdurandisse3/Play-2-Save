@@ -28,7 +28,9 @@ class Upload extends React.Component{
     const root = firebase.storage().ref()
     const newImage = root.child(firstFile.name);
 
-
+    try {
+      
+    }
 
     
   }
