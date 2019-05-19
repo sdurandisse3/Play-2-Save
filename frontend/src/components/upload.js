@@ -22,6 +22,13 @@ class Upload extends React.Component{
     ImageService.saveImage(url, date);
   }
 
+  handleFileInput = async (e) => {
+
+
+
+
+    
+  }
 
 
 render(){
