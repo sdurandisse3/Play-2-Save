@@ -13,7 +13,12 @@ return(
       <li className="nav-item">
         <Link className="nav-link" to="/upload">Upload Coupon</Link>
       </li>
-
+      <li className="nav-item">
+        <Link className="nav-link" to="/signup">Sign Up</Link>
+      </li>
+      {/* <li className="nav-item">
+        <Link className="nav-link" to="/upload">Login</Link>
+      </li> */}
     </ul>
   </nav>        
     </HashRouter>
