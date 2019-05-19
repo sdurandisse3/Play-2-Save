@@ -12,7 +12,8 @@ class Login extends React.Component{
         const { email, password, error } = this.state;
         const displayError = error === '' ? '' : <div className="alert alert-danger" role="alert">{error}</div>
         const displayForm = <>
-
+      <h1>Login</h1>
+      {displayError}
           return(
 
           )
