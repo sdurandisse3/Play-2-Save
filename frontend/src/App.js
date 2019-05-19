@@ -18,7 +18,7 @@ function App() {
   <Route path='/signup' exact component={SignUp}/>
   <Route path='/upload' exact component={Upload}/>
   <Route path='/login' exact component={Login}/>
-  <Route path='/' exact component={Feed}/>
+  <Route path='/feed' exact component={Feed}/>
 
   </>
 </HashRouter>
