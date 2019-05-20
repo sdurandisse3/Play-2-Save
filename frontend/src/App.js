@@ -1,14 +1,15 @@
 import React from 'react';
+<<<<<<< HEAD
 import SignUp from './containers/signup';
 import Feed from './containers/feed';
 import Header from './components/header';
 import Upload from './components/upload';
-import { HashRouter, Route} from 'react-router-dom';
 import Login from './containers/login';
 import Camera from './components/camera';
 import Tags from './components/tags';
-
-
+import {HashRouter, Route, Switch } from 'react-router-dom';
+import Home from './containers/home';
+import Snappers from './containers/snappers';
 
 function App() {
   return (
@@ -29,5 +30,6 @@ function App() {
     </div>
   );
 }
+  
 
 export default App;
