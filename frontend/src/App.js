@@ -5,7 +5,8 @@ import Header from './components/header';
 import Upload from './components/upload';
 import { HashRouter, Route} from 'react-router-dom';
 import Login from './containers/login';
-import Camera from './components/camera'
+import Camera from './components/camera';
+import Tags from './components/tags';
 
 
 
@@ -21,7 +22,6 @@ function App() {
   <Route path='/feed' exact component={Feed}/>
   <Route path='/camera' exact component={Camera}/>
   <Route path='/tags' exact component={Tags}/>
-
   </>
 </HashRouter>
 
