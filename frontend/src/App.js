@@ -20,6 +20,7 @@ function App() {
   <Route path='/login' exact component={Login}/>
   <Route path='/feed' exact component={Feed}/>
   <Route path='/camera' exact component={Camera}/>
+  <Route path='/tags' exact component={Tags}/>
 
   </>
 </HashRouter>
