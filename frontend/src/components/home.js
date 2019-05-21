@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Home extends react.Component {
+class Home extends React.Component {
     constructor(props){
         super(props)
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class Tags extends React.Component {
+class Category extends React.Component {
    constructor(props) {
        super (props)
 
@@ -19,18 +19,14 @@ class Tags extends React.Component {
        return(
         <>
         <div>
-        Tags Page
+        Category
         </div>
         <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">Tags</h1>
+    <h1 className="display-4">Category</h1>
     <p className="lead"><ul>
         {/* Dynamically rendered with data from firebase */}
-        <li>#Electronics(5)</li>
-        <li>#Groceries(17)</li>
-        <li>#Shopping(31)</li>
-        <li>#Travel(8)</li>
-        <li>#Leisure(18)</li>
+        
         {/* Dynamically rendered with data from firebase */}
         </ul>
         </p>
@@ -42,4 +38,4 @@ class Tags extends React.Component {
    }
 };
 
-export default Tags;
+export default Category;
