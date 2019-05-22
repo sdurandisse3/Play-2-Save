@@ -29,19 +29,19 @@ class Login extends React.Component{
           })
       }
 
-      componentDidMount() {
-        this.unsubscribe = firebase.auth().onAuthStateChanged(async user => {
-          if(user) {
-            console.log('uzur',user)
-            const { email, password } = user;
+      // componentDidMount() {
+      //   this.unsubscribe = firebase.auth().onAuthStateChanged(async user => {
+      //     if(user) {
+      //       console.log('uzur',user)
+      //       const { email, password } = user;
      
-            await this.setState({ user, email, password });
-          }
-          else {
-            this.setState({ user: null });
-          }
-        });
-      }
+      //       await this.setState({ user, email, password });
+      //     }
+      //     else {
+      //       this.setState({ user: null });
+      //     }
+      //   });
+      // }
 
       render(){
         const { email, password, error, user } = this.state;

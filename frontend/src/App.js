@@ -4,6 +4,7 @@ import Feed from './containers/feed';
 import Header from './components/header';
 import Upload from './components/upload';
 import Login from './containers/login';
+import Logout from './containers/logout';
 import Camera from './components/camera';
 import Tags from './components/tags';
 import {HashRouter, Route, Switch } from 'react-router-dom';
@@ -33,6 +34,8 @@ class App extends React.Component{
   <Route path='/feed' exact component={Feed}/>
   <Route path='/camera' exact component={Camera}/>
   <Route path='/tags' exact component={Tags}/>
+  <Route path='/logout' exact component={ Logout } />
+
   </>
 </HashRouter>
     </div>

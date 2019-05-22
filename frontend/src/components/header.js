@@ -25,6 +25,9 @@ return(
       <li className="nav-item">
         <Link className="nav-link" to="/tags">Tags</Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/logout">Logout</Link>
+      </li>
     </ul>
   </nav>        
     </HashRouter>
