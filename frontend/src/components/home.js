@@ -36,7 +36,7 @@ export default class Home extends React.Component {
       return (
         <>
           <h2>Welcome back, {userEmail}</h2>
-          <h4>Your ID is: {}</h4>
+          <h4>Your ID is: {userId}</h4>
           {/* <button onClick={this.handleProtectedAPI}>Protected API</button>  */}
         </>
       )
