@@ -29,7 +29,13 @@ export default class Home extends React.Component {
   }
 
 
-
+  getFirebaseIdToken = () => {
+    firebase.auth().currentUser.getIdToken(false).then((token) => {
+      this.setState({ token })
+    }).catch((error) => {
+      // Handle error
+    });
+  }
 
 
 
