@@ -1,0 +1,57 @@
+{
+    "Coupons":[
+        {
+        "name": "",
+        "date": "",
+        "img_url": "",
+        "tag": "",
+        "expire": ""  
+    },
+    {
+        "name": "",
+        "date": "",
+        "img_url": "",
+        "tag": "",
+        "expire": ""  
+    },
+    {
+        "name": "",
+        "date": "",
+        "img_url": "",
+        "tag": "",
+        "expire": ""  
+    },
+    {
+        "name": "",
+        "date": "",
+        "img_url": "",
+        "tag": "",
+        "expire": ""  
+    },
+   {
+       "Users": [
+           {
+            "firstName": "",
+            "lastName": "",
+            "date": "",
+            "coupons": "",
+            "friends": ""
+           },
+           {
+            "firstName": "",
+            "lastName": "",
+            "date": "",
+            "coupons": "",
+            "friends": ""
+        },
+        {
+            "firstName": "",
+            "lastName": "",
+            "dateCreated": "",
+            "coupons": "",
+            "friends": ""
+        }
+       ]
+   }
+    ]
+}

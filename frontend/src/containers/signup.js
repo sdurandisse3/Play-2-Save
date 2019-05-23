@@ -1,8 +1,9 @@
 import React from 'react';
 import firebase from '../firebase';
-import AuthContext from '../context/context';
+import AuthContext from '../contexts/auth';
 import { Redirect } from 'react-router-dom';
-// import Login from './login';
+import Login from './login';
+import Button from '../components/button'
 
 
 class SignUp extends React.Component{
@@ -37,9 +38,9 @@ class SignUp extends React.Component{
         const displayForm = <>
          
           {displayError}
-          {/* <div className='col-4' >
+          <div className='col-4' >
            <Login/> 
-          </div> */}
+          </div>
           
           <form >
             
@@ -53,7 +54,8 @@ class SignUp extends React.Component{
               <label htmlFor="exampleInputPassword1">Password</label>
               <input type="password" className="form-control" placeholder="Password" value={password} name="password" onChange={this.handleChange} />
             </div>
-            <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
+            <Button className='col col-md-6' goTo='/feed' onClick={this.handleSubmit} value='button' /> 
+            <button type="submit" className="btn btn-primary" >Sign Up</button>
            
 </div>
 

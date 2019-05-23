@@ -9,6 +9,7 @@ class Camera extends Component {
         this.state = {
             dataUri: ''
         }
+    
     }
 
     componentDidMount() {
@@ -57,41 +58,52 @@ class Camera extends Component {
             });
     }
 
+    showPic = () => {
+        if (this.state.dataUri) {
+            return <img alt="imgCamera" src={this.state.dataUri} />
+        }
+    }
     render() {
+        console.log(this.state.dataUri)
         return (
-            <div>
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.ENVIRONMENT;
-                    let idealResolution = { width: 640, height: 480 };
-                    this.startCamera(facingMode, idealResolution);
-                }}> Rear Facing</button>
+            <div className="container camBorder">
+                <div className="row camBorder">
 
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.USER;
-                    this.startCamera(facingMode, {});
-                }}> User Facing Default Resolution</button>
+                    <div className="col camBorder">
+                        <button className="btn btn-primary camBorder" onClick={() => {
+                            let facingMode = FACING_MODES.ENVIRONMENT;
+                            let idealResolution = { width: 640, height: 480 };
+                            this.startCamera(facingMode, idealResolution);
+                        }}>Front Camera</button>
+                    </div>
 
-                <button onClick={() => {
-                    let facingMode = FACING_MODES.USER;
-                    this.startCameraMaxResolution(facingMode);
-                }}> User Facing Max Resolution</button>
+                    <div className="col camBorder">
+                        <button className="btn btn-success camBorder" onClick={() => {
+                            this.takePhoto();
+                        }}> Take photo </button>
+                    </div>
 
-                <button onClick={() => {
-                    this.takePhoto();
-                }}> Take photo </button>
+                    <div className="col camBorder">
+                        <button className="btn btn-danger camBorder" onClick={() => {
+                            this.stopCamera();
+                        }}> Stop </button>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <video
+                                ref={this.videoRef}
+                                autoPlay={true}
+                            />
+                        </div>
+                    </div>
 
-                <button onClick={() => {
-                    this.stopCamera();
-                }}> Stop </button>
+                    <div className="row camBorder">
 
-                <video
-                    ref={this.videoRef}
-                    autoPlay="true"
-                />
-                <img
-                    alt="imgCamera"
-                    src={this.state.dataUri}
-                />
+                        <div className="col camBorder">
+                            {this.showPic()}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     };
