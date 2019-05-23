@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../containers/login'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Home extends React.Component {
@@ -13,7 +14,9 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-                Home Page
+          <div className='col-4' >
+           <Login/> 
+          </div>
                 </div>
         )
     }

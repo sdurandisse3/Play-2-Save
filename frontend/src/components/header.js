@@ -16,6 +16,9 @@ return(
       <li className="nav-item">
         <Link className="nav-link" to="/camera">Camera</Link>
       </li> 
+
+      <Link to ={Home}img src ='SnapShoppersLogo.png'></Link>
+
       <li className="nav-item">
         <Link className="nav-link" to="/feed">Feed</Link>
       </li>

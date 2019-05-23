@@ -37,10 +37,6 @@ class SignUp extends React.Component{
         const displayError = error === '' ? '' : <div className="alert alert-danger" role="alert">{error}</div>
         const displayForm = <>
          
-          {displayError}
-          <div className='col-4' >
-           <Login/> 
-          </div>
           
           <form >
             
