@@ -9,8 +9,6 @@ import Home from './components/home';
 import Camera from './components/camera';
 import Tags from './components/tags';
 import {HashRouter, Route, Switch } from 'react-router-dom';
-
-// import Home from './containers/home';
 // import Snappers from './containers/snappers';
 
 class App extends React.Component{
