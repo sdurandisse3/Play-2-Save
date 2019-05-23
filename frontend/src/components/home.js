@@ -24,6 +24,13 @@ export default class Home extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+
+
+
 
 
   render() {
