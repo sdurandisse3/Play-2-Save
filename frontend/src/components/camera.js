@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
+import firebase from '../firebase';
 
 class Camera extends Component {
     constructor(props, context) {
@@ -35,6 +36,12 @@ class Camera extends Component {
         };
 
         let dataUri = this.cameraPhoto.getDataUri(config);
+        console.log('dataURI is...', dataUri)
+        const storageRef = firebase.storage().ref();
+        const testRef = storageRef.child('<username>/test.jpg')
+        testRef.putString(dataUri, 'data_url').then(function(snapshot) {
+            console.log('Uploaded a data_url string!');
+          });
         this.setState({ dataUri });
     }
 
