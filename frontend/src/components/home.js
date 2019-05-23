@@ -11,6 +11,9 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) 
+    
     })
   }
 
