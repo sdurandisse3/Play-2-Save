@@ -18,7 +18,9 @@ export default class Home extends React.Component {
           this.getFirebaseIdToken()
         });
       }
-    
+      else {
+        // ..... The user is logged out
+      }
     })
   }
 
