@@ -29,7 +29,9 @@ export default class Home extends React.Component {
   render() {
     const { userEmail, userId } = this.state;
 
-    if (userEmail === '') 
+    if (userEmail === '') {
+      return <h1>You're not logged in</h1>
+    }
     
   }
 }
