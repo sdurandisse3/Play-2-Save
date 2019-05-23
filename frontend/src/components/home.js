@@ -12,7 +12,12 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) 
+      if (user) {
+        // ..... DO YOUR LOGGED IN LOGIC
+        this.setState({ userEmail: user.email, userId: user.uid }, () => {
+          this.getFirebaseIdToken()
+        });
+      }
     
     })
   }
