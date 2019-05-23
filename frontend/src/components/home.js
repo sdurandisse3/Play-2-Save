@@ -32,7 +32,15 @@ export default class Home extends React.Component {
     if (userEmail === '') {
       return <h1>You're not logged in</h1>
     }
-    
+    else {
+      return (
+        <>
+          <h2>Welcome back, {}</h2>
+          <h4>Your ID is: {}</h4>
+          {/* <button onClick={this.handleProtectedAPI}>Protected API</button>  */}
+        </>
+      )
+    }
   }
 }
 
