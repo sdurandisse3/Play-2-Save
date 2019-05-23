@@ -11,6 +11,7 @@ import Tags from './components/tags';
 import {HashRouter, Route, Switch } from 'react-router-dom';
 // import Snappers from './containers/snappers';
 import AuthContext from './contexts/auth';
+import firebase from './firebase'
 
 class App extends React.Component{
  constructor(props){
@@ -19,14 +20,30 @@ class App extends React.Component{
      user:''
    }
 
-   
-
  }
+
+ componentDidMount() {
+  this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // ..... DO YOUR LOGGED IN LOGIC
+      this.setState({ user: user.email }, () => {
+      });
+    }
+    else {
+      // ..... The user is logged out
+    }
+  })
+}
+
+componentWillUnmount() {
+  this.unsubscribe();
+}
+
   render(){
   return (
     <div className="App">
 <HashRouter>
-  <AuthContext.Provider value={this.state}>
+  <AuthContext.Provider value={this.state.user}>
  <>
   <Route path='/' component={ Header } />
   <div className='container mt-5'>
