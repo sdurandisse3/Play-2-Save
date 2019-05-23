@@ -1,0 +1,47 @@
+{
+    "Users": [
+        {
+        "UserName": "",
+        "coupons": ""
+        },
+        { 
+        "UserName": "",
+        "coupons": ""
+        },
+        {
+        "UserName": "",
+        "coupons": ""
+        }
+        ],
+        "Coupons": [
+            {
+                "img_url": "",
+                "store": "",
+                "tags": ""
+            },
+            {
+                "img_url": "",
+                "store": "",
+                "tags": ""
+            },
+            {
+                "img_url": "",
+                "store": "",
+                "tags": ""
+            },
+            {
+                "img_url": "",
+                "store": "",
+                "tags": ""
+            },
+            {
+                "img_url": "",
+                "tags": ""
+            },
+            {
+                "img_url": "",
+                "store": "",
+                "tags": ""
+            }
+        ]
+}
