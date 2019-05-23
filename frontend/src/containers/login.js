@@ -74,7 +74,7 @@ class Login extends React.Component{
             {
               (user) => {
                 if (user) {
-                  return <Redirect to='/' />
+                  return <Redirect to='/camera' />
                 } else {
                   return displayForm;
                 }
