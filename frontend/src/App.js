@@ -5,6 +5,7 @@ import Header from './components/header';
 import Upload from './components/upload';
 import Login from './containers/login';
 import Logout from './containers/logout';
+import Home from './components/home';
 import Camera from './components/camera';
 import Tags from './components/tags';
 import {HashRouter, Route, Switch } from 'react-router-dom';
@@ -28,6 +29,8 @@ class App extends React.Component{
 <HashRouter>
   <>
   <Route path='/' component={ Header } />
+  <div className='container mt-5'>
+  <Route path='/' exact component={ Home } />
   <Route path='/signup' exact component={SignUp}/>
   <Route path='/upload' exact component={Upload}/>
   <Route path='/login' exact component={Login}/>
@@ -35,6 +38,7 @@ class App extends React.Component{
   <Route path='/camera' exact component={Camera}/>
   <Route path='/tags' exact component={Tags}/>
   <Route path='/logout' exact component={ Logout } />
+  </div>
 
   </>
 </HashRouter>
