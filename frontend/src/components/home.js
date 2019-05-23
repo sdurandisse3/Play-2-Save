@@ -27,7 +27,10 @@ export default class Home extends React.Component {
 
 
   render() {
+    const { userEmail, userId } = this.state;
 
+    
+    
   }
 }
 
