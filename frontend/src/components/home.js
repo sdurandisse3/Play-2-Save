@@ -37,7 +37,13 @@ export default class Home extends React.Component {
     });
   }
 
-
+  handleProtectedAPI = (e) => {
+    axios.post('http://localhost:3001/protected', { token: this.state.token })
+    .then(response => response.data )
+    .then(data => {
+      console.log(data);
+    })
+  }
 
   render() {
     const { userEmail, userId } = this.state;
