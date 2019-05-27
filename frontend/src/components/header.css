@@ -1,0 +1,12 @@
+.navbar-light .navbar-nav .nav-link {
+  color: #b3d7ff;
+  line-height: 3;
+}
+
+.fas,
+.fa-barcode,
+.fa-5x {
+  padding: 15%;
+  border: 1px solid red;
+  border-radius: 50%;
+}
