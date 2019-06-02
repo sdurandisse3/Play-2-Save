@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
 import firebase from '../firebase';
+import Upload from '../components/upload';
 
 class Camera extends Component {
     constructor(props, context) {
@@ -39,9 +40,9 @@ class Camera extends Component {
         console.log('dataURI is...', dataUri)
         const storageRef = firebase.storage().ref();
         const testRef = storageRef.child('<username>/test.jpg')
-        testRef.putString(dataUri, 'data_url').then(function(snapshot) {
+        testRef.putString(dataUri, 'data_url').then(function (snapshot) {
             console.log('Uploaded a data_url string!');
-          });
+        });
         this.setState({ dataUri });
     }
 
@@ -63,7 +64,11 @@ class Camera extends Component {
     render() {
         console.log(this.state.dataUri)
         return (
+
             <div className="container camBorder">
+                <div className="row" >
+                    <Upload />
+                </div>
                 <div className="row camBorder">
 
                     <div className="col camBorder">
@@ -83,7 +88,7 @@ class Camera extends Component {
                     <div className="col camBorder">
                         <button className="btn btn-danger camBorder" onClick={() => {
                             this.stopCamera();
-                        }}> Stop </button>
+                        }}> Stop Camera </button>
                     </div>
                     <div className="row">
                         <div className="col">
