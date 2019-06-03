@@ -36,7 +36,9 @@ const Header = (props) => {
           } else {
             return (
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to="/">Snap Shoppers</Link>
+                <Link className="navbar-brand" to="/">
+                  <img src={logo} alt="Snap Shoppers" width="100" className="d-inline-block align-top" />
+                </Link>
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <Link className="nav-link" to="/login">Login</Link>

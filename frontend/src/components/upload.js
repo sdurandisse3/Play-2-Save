@@ -16,8 +16,8 @@ import ImageService from '../services/images';
 // };
 // firebase.initializeApp(config);
 
-class Upload extends React.Component{
-  
+class Upload extends React.Component {
+
   saveImage = (url) => {
     const date = Date();
 
@@ -35,24 +35,23 @@ class Upload extends React.Component{
       const url = await snapshot.ref.getDownloadURL();
       this.saveImage(url);
     }
-    catch(err) {
+    catch (err) {
       console.log(err);
     }
-    
+
   }
 
-
-render(){
-  return(
-    <div className='container'>
-    <div className="input-group mb-3">
-      <div className="custom-file">
-        <input type="file" className="custom-file-input" onChange={this.handleFileInput} />
-        <label className="custom-file-label">Upload Image</label>
+  render() {
+    return (
+      <div className='container'>
+        <div className="input-group mb-3">
+          <div className="custom-file">
+            <input type="file" className="custom-file-input" onChange={this.handleFileInput} />
+            <label className="custom-file-label">Upload Image</label>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  )
-}
+    )
+  }
 }
 export default Upload;
