@@ -17,6 +17,7 @@ class Feed extends React.Component{
 
     render(){
         const { images } = this.state; 
+        console.log('LOOKHERE',this.state)
         return(
         <div className='container'>
         {

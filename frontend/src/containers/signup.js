@@ -68,7 +68,7 @@ class SignUp extends React.Component{
             (user) => {
               if (user) {
                 console.log('user',user)
-                return <Redirect to='/camera' />
+                return <Redirect to='/feed' />
               } else {
                 return displayForm;
               } 
