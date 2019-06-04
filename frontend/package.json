@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.0",
     "firebase": "^6.0.2",
     "fuse.js": "^3.4.4",
     "jslib-html5-camera-photo": "^3.0.2-beta.0",

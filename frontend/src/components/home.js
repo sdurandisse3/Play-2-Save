@@ -1,25 +1,65 @@
 import React from 'react';
-import Login from '../containers/login'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import firebase from '../firebase';
+import axios from 'axios';
 
-class Home extends React.Component {
-    constructor(props){
-        super(props)
+export default class Home extends React.Component {
 
-        this.state = {
+  state = {
+    userEmail: '',
+    userId: '',
+    token: ''
+  }
 
-        }
+  componentDidMount() {
+    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // ..... DO YOUR LOGGED IN LOGIC
+        this.setState({ userEmail: user.email, userId: user.uid }, () => {
+          this.getFirebaseIdToken()
+        });
+      }
+      else {
+        // ..... The user is logged out
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+
+  getFirebaseIdToken = () => {
+    firebase.auth().currentUser.getIdToken(false).then((token) => {
+      this.setState({ token })
+    }).catch((error) => {
+      // Handle error
+    });
+  }
+
+  handleProtectedAPI = (e) => {
+    axios.post('http://localhost:3001/protected', { token: this.state.token })
+    .then(response => response.data )
+    .then(data => {
+      console.log(data);
+    })
+  }
+
+  render() {
+    const { userEmail, userId } = this.state;
+
+    if (userEmail === '') {
+      return <h1>Welcome To Snap Shoppers Login or Signup to Connect with Couponers</h1>
     }
-
-    render() {
-        return(
-            <div>
-          <div className='col-4' >
-           <Login/> 
-          </div>
-                </div>
-        )
+    else {
+      return (
+        <>
+          <h2>Welcome back, {userEmail}</h2>
+          <h4>Your ID is: {userId}</h4>
+          {/* <button onClick={this.handleProtectedAPI}>Protected API</button>  */}
+        </>
+      )
     }
+  }
 }
 
-export default Home;

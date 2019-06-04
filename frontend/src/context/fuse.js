@@ -11,4 +11,4 @@ let options = {
     ]
   };
   let fuse = new Fuse(list, options); // "list" is the item array
-  let result = fuse.search()//grab from ui
+  let result = fuse.search('')//grab from ui

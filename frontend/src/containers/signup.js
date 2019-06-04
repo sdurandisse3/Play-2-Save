@@ -51,7 +51,7 @@ class SignUp extends React.Component{
               <input type="password" className="form-control" placeholder="Password" value={password} name="password" onChange={this.handleChange} />
             </div>
             <Button className='col col-md-6' goTo='/feed' onClick={this.handleSubmit} value='button' /> 
-            <button type="submit" className="btn btn-primary" >Sign Up</button>
+            <button type="submit" className="btn btn-primary" goTo='/camera' onClick={this.handleSubmit} >Sign Up</button>
            
 </div>
 
@@ -63,7 +63,8 @@ class SignUp extends React.Component{
           {
             (user) => {
               if (user) {
-                return <Redirect to='/' />
+                console.log('user',user)
+                return <Redirect to='/feed' />
               } else {
                 return displayForm;
               } 

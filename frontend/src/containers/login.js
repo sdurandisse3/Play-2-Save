@@ -29,9 +29,23 @@ class Login extends React.Component{
           })
       }
 
+      // componentDidMount() {
+      //   this.unsubscribe = firebase.auth().onAuthStateChanged(async user => {
+      //     if(user) {
+      //       console.log('uzur',user)
+      //       const { email, password } = user;
+     
+      //       await this.setState({ user, email, password });
+      //     }
+      //     else {
+      //       this.setState({ user: null });
+      //     }
+      //   });
+      // }
+
       render(){
-        const { email, password, error } = this.state;
-        console.log('state',this.state, 'email',email, 'password',password)
+        const { email, password, error, user } = this.state;
+        console.log('state',this.state, 'email',email, 'password',password, 'user',user)
         const displayError = error === '' ? '' : <div className="alert alert-danger" role="alert">{error}</div>
         const displayForm = <>
       
@@ -60,7 +74,7 @@ class Login extends React.Component{
             {
               (user) => {
                 if (user) {
-                  return <Redirect to='/' />
+                  return <Redirect to='/feed' />
                 } else {
                   return displayForm;
                 }
