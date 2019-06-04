@@ -25,8 +25,9 @@ class App extends React.Component{
  componentDidMount() {
   this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      console.log(user)
       // ..... DO YOUR LOGGED IN LOGIC
-      this.setState({ user: user.email }, () => {
+      this.setState({ user: user.uid, uid: user.uid }, () => {
       });
     }
     else {

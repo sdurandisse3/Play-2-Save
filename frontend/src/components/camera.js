@@ -46,8 +46,16 @@ class Camera extends Component {
         console.log('dataURI is...', dataUri)
         const storageRef = firebase.storage().ref();
         const testRef = storageRef.child(`${this.state.user}/${this.getRandomInt(10)}.jpg`)
-        testRef.putString(dataUri, 'data_url').then(function(snapshot) {
-            console.log('Uploaded a data_url string!');
+        testRef.putString(dataUri, 'data_url').then((snapshot) => {
+            console.log('Uploaded a data_url string!', snapshot);
+            snapshot.ref.getDownloadURL().then(url => {
+                const db = firebase.database();
+                console.log(url, this.state.user)
+                var newImageKey = firebase.database().ref('users/' + this.state.user).child('coupons').push().key;
+                var updates = {};
+                updates['users/' + this.state.user + '/coupons/' + newImageKey] = url;
+                firebase.database().ref().update(updates);
+            })
           });
         this.setState({ dataUri });
     }
