@@ -3,18 +3,17 @@ import Image from '../components/image'
 import ImageService from '../services/images';
 
 
-class Feed extends React.Component{
-    constructor(props) {
-        super(props);
+class Feed extends React.Component {
+  constructor(props) {
+    super(props);
 
-        ImageService.init();
-        const imagesArray = ImageService.getImages();
+    ImageService.init();
+    const imagesArray = ImageService.getImages();
 
-        this.state = {
-            images: imagesArray
-          }
+    this.state = {
+      images: imagesArray
     }
-
+  }
     render(){
         const { images } = this.state; 
         console.log('LOOKHERE',this.state)
@@ -26,7 +25,7 @@ class Feed extends React.Component{
           })
         }
       </div>
-        );
-    }
-}
+    );
+  };
+};
 export default Feed;

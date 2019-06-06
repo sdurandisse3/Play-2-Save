@@ -1,0 +1,11 @@
+.fas,
+.fa-camera,
+.fa-5x {
+  padding: 15%;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+}
+
+.camBorder {
+  border: 1px solid red;
+}

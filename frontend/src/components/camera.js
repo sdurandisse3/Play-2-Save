@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
 import firebase from '../firebase';
+import Upload from '../components/upload';
 import AuthContext from '../contexts/auth';
+
 
 class Camera extends Component {
     static contextType = AuthContext;
@@ -33,6 +35,7 @@ class Camera extends Component {
                 console.error('Camera not started!', error);
             });
     }
+
      getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
       }
@@ -79,42 +82,45 @@ class Camera extends Component {
         console.log(this.state.dataUri)
         console.log('user',this.state.user)
         return (
-            <div className="container camBorder">
-                <div className="row camBorder">
+            <div className="container">
+                <div className="row" >
+                    <Upload />
+                </div>
 
-                    <div className="col camBorder">
-                        <button className="btn btn-primary camBorder" onClick={() => {
+                <div className="row">
+                    <div className="col text-center">
+                        <video
+                            ref={this.videoRef}
+                            autoPlay={true}
+                        />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col text-right">
+                        <button className="btn btn-success" onClick={() => {
                             let facingMode = FACING_MODES.ENVIRONMENT;
                             let idealResolution = { width: 640, height: 480 };
                             this.startCamera(facingMode, idealResolution);
-                        }}>Front Camera</button>
+                        }}>Start Camera</button>
                     </div>
 
-                    <div className="col camBorder">
-                        <button className="btn btn-success camBorder" onClick={() => {
+                    <div className="col text-center">
+                        <button className="btn btn-primary" onClick={() => {
                             this.takePhoto();
-                        }}> Take photo </button>
+                        }}>Take photo</button>
                     </div>
 
-                    <div className="col camBorder">
-                        <button className="btn btn-danger camBorder" onClick={() => {
+                    <div className="col">
+                        <button className="btn btn-danger" onClick={() => {
                             this.stopCamera();
-                        }}> Stop </button>
+                        }}>Stop Camera</button>
                     </div>
-                    <div className="row">
-                        <div className="col">
-                            <video
-                                ref={this.videoRef}
-                                autoPlay={true}
-                            />
-                        </div>
-                    </div>
+                </div>
 
-                    <div className="row camBorder">
-
-                        <div className="col camBorder">
-                            {this.showPic()}
-                        </div>
+                <div className="row">
+                    <div className="col text-center">
+                        {this.showPic()}
                     </div>
                 </div>
             </div>
