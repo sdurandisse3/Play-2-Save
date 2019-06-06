@@ -48,7 +48,7 @@ export default class Home extends React.Component {
     const { userEmail, userId } = this.state;
 
     if (userEmail === '') {
-      return <h1>You're not logged in</h1>
+      return <h1>Welcome To Snap Shoppers Login or Signup to Connect with Couponers</h1>
     }
     else {
       return (

@@ -67,15 +67,16 @@ class Login extends React.Component {
         </div>
       </form>
     </>;
-
-    return (
-      <AuthContext.Consumer>
-        {
-          (user) => {
-            if (user) {
-              return <Redirect to='/camera' />
-            } else {
-              return displayForm;
+          return(
+            <AuthContext.Consumer>
+            {
+              (user) => {
+                if (user) {
+                  return <Redirect to='/feed' />
+                } else {
+                  return displayForm;
+                }
+              }
             }
           }
         }
