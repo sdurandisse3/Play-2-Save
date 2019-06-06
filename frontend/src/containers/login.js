@@ -1,8 +1,7 @@
 import React from 'react';
 import firebase from '../firebase';
 import AuthContext from '../contexts/auth';
-import { Redirect } from 'react-router-dom';
-import Button from '../components/button';
+import { Redirect } from 'react-router-dom'
 
 class Login extends React.Component {
   state = {
@@ -61,9 +60,8 @@ class Login extends React.Component {
             <label htmlFor="exampleInputPassword1">Password</label>
             <input type="password" className="form-control" placeholder="Password" value={password} name="password" onChange={this.handleChange} />
           </div>
-          <Button className='col col-md-6' goTo='/feed' onClick={this.handleSubmit} value='button' />
 
-          <button type="submit" goTo='/feed' className="btn btn-primary" onClick={this.handleSubmit}>Login</button>
+          <button type="submit" to='/feed' className="btn btn-primary" onClick={this.handleSubmit}>Login</button>
         </div>
       </form>
     </>;
