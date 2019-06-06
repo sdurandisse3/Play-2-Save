@@ -78,8 +78,6 @@ class Login extends React.Component {
                 }
               }
             }
-          }
-        }
       </AuthContext.Consumer>
     )
   }
