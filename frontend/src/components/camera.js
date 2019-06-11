@@ -52,10 +52,10 @@ class Camera extends Component {
             snapshot.ref.getDownloadURL().then(url => {
                 const db = firebase.database();
                 console.log(url, this.state.user)
-                var newImageKey = firebase.database().ref('users/' + this.state.user).child('coupons').push().key;
+                var newImageKey = db.ref('users/' + this.state.user).child('coupons').push().key;
                 var updates = {};
                 updates['users/' + this.state.user + '/coupons/' + newImageKey] = url;
-                firebase.database().ref().update(updates);
+                db.ref().update(updates);
             })
           });
         this.setState({ dataUri });

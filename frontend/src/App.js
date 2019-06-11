@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUp from './containers/signup';
 import Feed from './containers/feed';
+import Navbar from './components/navbar'
 import Header from './components/header';
 import Upload from './components/upload';
 import Login from './containers/login';

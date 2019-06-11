@@ -46,7 +46,11 @@ return(
                 } else {
                   return (
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                  <Link className="navbar-brand" to="/">Snap Shoppers</Link>
+                  <Link className="navbar-brand" to="/">
+           <img src={require("../assets/SnapShoppersLogo.png")} height = '100px' width = '100px' alt="SnapShopper"></img>
+           </Link>
+           <ul className="navbar-nav m-auto">
+                    <li className="nav-item align-bottom">
                   <ul className="navbar-nav">
                   <li className="nav-item">
                       <Link className="nav-link" to="/login">Login</Link>
@@ -54,6 +58,8 @@ return(
                     <li className="nav-item">
                       <Link className="nav-link" to="/signup">Sign Up</Link>
                     </li>    
+                  </ul>
+                  </li>
                   </ul>
                 </nav>           
                   )

@@ -12,7 +12,9 @@ class Login extends React.Component{
       }
 
       handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+        const tags = this.props;
+        const userInput = e.target.value;
+        this.setState({ [tags]: userInput });
       }
       
       handleSubmit = (e) => {
@@ -61,8 +63,12 @@ class Login extends React.Component{
           <label htmlFor="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" placeholder="Password" value={password} name="password" onChange={this.handleChange} />
         </div>
-        <Button className='col col-md-6' goTo='/feed' onClick={this.handleSubmit} value='button' /> 
-        
+        {/* <Button className='col col-md-6' goTo='/feed' onClick={this.handleSubmit} value='button' />  */}
+        <video id="background-video" loop autoPlay>
+    <source src={require('../assets/BgVid2.mp4')} sytle = {StyleSheet} type="video/mp4" />
+    <source src={require('../assets/BgVid2.mp4')} sytle = {StyleSheet} type="video/ogg" />
+    Your browser does not support the video tag.
+</video>
         <button type="submit" goTo='/feed' className="btn btn-primary" onClick={this.handleSubmit}>Login</button>          
         </div>
 
@@ -74,7 +80,7 @@ class Login extends React.Component{
             {
               (user) => {
                 if (user) {
-                  return <Redirect to='/feed' />
+                  return <Redirect goTo='/feed' />
                 } else {
                   return displayForm;
                 }

@@ -1,3 +1,5 @@
+const Fuse = () => {
+
 let options = {
     shouldSort: true,
     threshold: 0.6,
@@ -10,5 +12,9 @@ let options = {
       "coupon"
     ]
   };
-  let fuse = new Fuse(list, options); // "list" is the item array
+
+  let fuse = new Fuse('tags', options); // "tags" is the item array
   let result = fuse.search('')//grab from ui
+}
+
+export default Fuse;
