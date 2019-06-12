@@ -56,7 +56,11 @@ class Camera extends Component {
                 console.log(url, this.state.user)
                 var newImageKey = firebase.database().ref('users/' + this.state.user).child('coupons').push().key;
                 var updates = {};
-                updates['users/' + this.state.user + '/coupons/' + newImageKey] = url;
+                var newObj = {
+                    url: url,
+                    tags: ["tags will go here"]
+                }
+                updates['users/' + this.state.user + '/coupons/' + `coupon${this.getRandomInt(1000)}`] = [newObj];
                 firebase.database().ref().update(updates);
             })
           });

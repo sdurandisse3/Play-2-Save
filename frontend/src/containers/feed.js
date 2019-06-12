@@ -22,9 +22,16 @@ class Feed extends React.Component {
       if (user) {
         console.log('thisuser', user)
         firebase.database().ref('/users/' + user.uid).once('value').then( (snapshot) => {
-          console.log(snapshot.val().coupons)
+          if ( snapshot.val() ){
+           console.log(snapshot.val().coupons)
           console.log(Object.values(snapshot.val().coupons))
-          this.setState({images: Object.values(snapshot.val().coupons)})
+          this.setState({images: Object.values(snapshot.val().coupons)}) 
+          }
+          else{
+            console.log('this got hittt')
+            return <h2> Upload Coupon </h2>
+          }
+        
           
         });
       }
@@ -43,7 +50,8 @@ class Feed extends React.Component {
       <div className='container'>
         {
           images.map((e, i) => {
-            return <Image image={e.url} timestamp={e.timestamp} key={i} />
+            console.log('yerrrrr',e);
+            return <Image image={e[0].url} timestamp={e.timestamp} key={i} />
           })
         }
       </div>
