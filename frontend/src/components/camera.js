@@ -13,6 +13,7 @@ class Camera extends Component {
         this.videoRef = React.createRef();
         this.state = {
             dataUri: '',
+            photoTag: '',
             user: this.context
         }
     }
@@ -36,10 +37,10 @@ class Camera extends Component {
             });
     }
 
-     getRandomInt(max) {
+    getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
-      }
-      
+    }
+
     takePhoto() {
         const config = {
             sizeFactor: 1
@@ -63,7 +64,7 @@ class Camera extends Component {
                 updates['users/' + this.state.user + '/coupons/' + `coupon${this.getRandomInt(1000)}`] = [newObj];
                 firebase.database().ref().update(updates);
             })
-          });
+        });
         this.setState({ dataUri });
     }
 
@@ -79,12 +80,23 @@ class Camera extends Component {
 
     showPic = () => {
         if (this.state.dataUri) {
-            return <img alt="imgCamera" src={this.state.dataUri} />
-        }
-    }
+            return (<>
+                <div className="col text-center">
+                    <img alt="imgCamera" src={this.state.dataUri} />
+                </div>
+                <div className="input-group col-12">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text">Add Tag</span>
+                    </div>
+                    <textarea className="form-control" aria-label="Add Tag"></textarea>
+                </div>
+            </>)
+        };
+    };
+
     render() {
         console.log(this.state.dataUri)
-        console.log('user',this.state.user)
+        console.log('user', this.state.user)
         return (
             <div className="container">
                 <div className="row" >
@@ -123,9 +135,7 @@ class Camera extends Component {
                 </div>
 
                 <div className="row">
-                    <div className="col text-center">
-                        {this.showPic()}
-                    </div>
+                    {this.showPic()}
                 </div>
             </div>
         );

@@ -37,16 +37,15 @@ class Upload extends React.Component {
     }
     catch (err) {
       console.log(err);
-    }
-
-  }
+    };
+  };
 
   render() {
     return (
       <div className='container'>
         <div className="input-group mb-3">
           <div className="custom-file">
-            <input type="file" className="custom-file-input" onChange={this.handleFileInput} />
+            <input type="file" className="custom-file-input" accept="image/png, image/jpeg" onChange={this.handleFileInput} />
             <label className="custom-file-label">Upload Image</label>
           </div>
         </div>
