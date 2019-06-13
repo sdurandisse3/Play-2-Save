@@ -2,6 +2,7 @@ import React from 'react'
 import Image from '../components/image'
 import ImageService from '../services/images';
 import firebase from 'firebase';
+import './feed.css';
 
 
 class Feed extends React.Component {
@@ -47,15 +48,35 @@ class Feed extends React.Component {
     const { images } = this.state;
     console.log('LOOKHERE', this.state)
     return (
-      <div className='container'>
-        {
+      <div className='container'  >
+      <div className="row">
+      {
           images.map((e, i) => {
             console.log('yerrrrr',e);
-            return <Image image={e[0].url} timestamp={e.timestamp} key={i} />
+            return (
+              <>
+              <div className="col-3">
+              <Image className='img-item' image={e[0].url} timestamp={e.timestamp} key={i} />
+
+              </div>
+
+            
+            </>)
           })
         }
+      </div>
+        
       </div>
     );
   };
 };
 export default Feed;
+
+// <div class="card" style="width: 18rem;">
+//   <img class="card-img-top" src="..." alt="Card image cap">
+//   <div class="card-body">
+//     <h5 class="card-title">Card title</h5>
+//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>
